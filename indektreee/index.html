@@ -1,0 +1,716 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="TUGAS TUGAS">
+      
+      
+        <link rel="canonical" href="https://septiandwihanggara.github.io/datamining/indektreee/">
+      
+      
+        <meta name="author" content="SEPTIAN DWI HANGGARA">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>Materi Decision tree - DATA MINING</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#pengertian-decision-tree" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://septiandwihanggara.github.io/datamining" title="DATA MINING" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              DATA MINING
+            </span>
+            <span class="md-header-nav__topic">
+              Materi Decision tree
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/septiandwihanggara/datamining" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    septiandwihanggara/datamining
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://septiandwihanggara.github.io/datamining" title="DATA MINING" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    DATA MINING
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/septiandwihanggara/datamining" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    septiandwihanggara/datamining
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../indexkmean/" title="Materi K-mean" class="md-nav__link">
+      Materi K-mean
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../indexknn/" title="Materi KNN" class="md-nav__link">
+      Materi KNN
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Materi Decision tree
+      </label>
+    
+    <a href="./" title="Materi Decision tree" class="md-nav__link md-nav__link--active">
+      Materi Decision tree
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pengertian-decision-tree" title="PENGERTIAN DECISION TREE" class="md-nav__link">
+    PENGERTIAN DECISION TREE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kelebihan" title="KELEBIHAN" class="md-nav__link">
+    KELEBIHAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kekurangan" title="KEKURANGAN" class="md-nav__link">
+    KEKURANGAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementasi" title="IMPLEMENTASI" class="md-nav__link">
+    IMPLEMENTASI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-1-import-library-yang-di-butuhkan" title="Langkah 1: import library yang di butuhkan" class="md-nav__link">
+    Langkah 1: import library yang di butuhkan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-2-menginputkan-file" title="Langkah 2: menginputkan file" class="md-nav__link">
+    Langkah 2: menginputkan file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-ke-3" title="Langkah ke 3 :" class="md-nav__link">
+    Langkah ke 3 :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sesuaikan-dengan-kolom-yang-ada" title="Sesuaikan dengan kolom yang ada" class="md-nav__link">
+    Sesuaikan dengan kolom yang ada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-menampilkan-kolom-yang-di-uji" title="x= menampilkan kolom yang di uji" class="md-nav__link">
+    x= menampilkan kolom yang di uji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#y-mensmpilkan-class" title="y = mensmpilkan class" class="md-nav__link">
+    y = mensmpilkan class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menampilkan-grafik" title="Menampilkan Grafik" class="md-nav__link">
+    Menampilkan Grafik
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasil-output" title="Hasil Output" class="md-nav__link">
+    Hasil Output
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pengertian-decision-tree" title="PENGERTIAN DECISION TREE" class="md-nav__link">
+    PENGERTIAN DECISION TREE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kelebihan" title="KELEBIHAN" class="md-nav__link">
+    KELEBIHAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kekurangan" title="KEKURANGAN" class="md-nav__link">
+    KEKURANGAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementasi" title="IMPLEMENTASI" class="md-nav__link">
+    IMPLEMENTASI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-1-import-library-yang-di-butuhkan" title="Langkah 1: import library yang di butuhkan" class="md-nav__link">
+    Langkah 1: import library yang di butuhkan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-2-menginputkan-file" title="Langkah 2: menginputkan file" class="md-nav__link">
+    Langkah 2: menginputkan file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-ke-3" title="Langkah ke 3 :" class="md-nav__link">
+    Langkah ke 3 :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sesuaikan-dengan-kolom-yang-ada" title="Sesuaikan dengan kolom yang ada" class="md-nav__link">
+    Sesuaikan dengan kolom yang ada
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-menampilkan-kolom-yang-di-uji" title="x= menampilkan kolom yang di uji" class="md-nav__link">
+    x= menampilkan kolom yang di uji
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#y-mensmpilkan-class" title="y = mensmpilkan class" class="md-nav__link">
+    y = mensmpilkan class
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menampilkan-grafik" title="Menampilkan Grafik" class="md-nav__link">
+    Menampilkan Grafik
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasil-output" title="Hasil Output" class="md-nav__link">
+    Hasil Output
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Materi Decision tree</h1>
+                
+                <h5 id="pengertian-decision-tree">PENGERTIAN DECISION TREE<a class="headerlink" href="#pengertian-decision-tree" title="Permanent link">&para;</a></h5>
+<p>adalah alat pendukung keputusan yang  menggunakan model keputusan yang berbentuk seperti pohon. Decision tree  memetakan berbagai alternatif yang mungkin untuk mengatasi suatu  masalah, dan terdapat juga faktor-faktor kemungkinan yang dapat  mempengaruhi alternatif tersebut beserta estimasi akhirnya jika memilih  alternatif yang ada. Decision tree merupakan salah satu metode yang bisa  digunaan untuk menampilkan algoritma dimana hanya berisi pernyataan  kontrol bersyarat.</p>
+<p>Penggunaan Decision tree ini umunya  dalam riset operasi, khususnya dalam analisis keputusan. Tujuan dalam  menggunakan Decision tree untuk membantu mengidentifikasi strategi yang  paling mungkin untuk mencapai tujuan dan merupakan alat yang populer  dalam machine learning.</p>
+<p>Decision tree merupakan struktur seperti  bagan alur dimana setiap simpul internal mewakili kemungkinan yang ada  pada atribut, setiap cabang mewakili hasil dari kemungkinan tersebut,  dan setiap simpul daun mewakili label kelas (keputusan diambil setelah  menghitung semua atribut). Jalur dari root ke daun mewakili aturan  klasifikasi.</p>
+<p>Dalam analisis keputusan, decision tree  dan diagram yang terkait dengan itu digunakan sebagai alat pendukung  keputusan visual dan analitis, dimana akan dihitungnya nilai atau  utilitas yang diharapkan dari alternatif yang ada.</p>
+<p><strong>Decision tree terdiri dari tiga jenis simpul:</strong></p>
+<ul>
+<li>Simpul keputusan - biasanya diwakili oleh kotak</li>
+<li>Simpul peluang - biasanya diwakili oleh lingkaran</li>
+<li>Simpul akhir - biasanya diwakili oleh segitiga</li>
+</ul>
+<h5 id="kelebihan">KELEBIHAN<a class="headerlink" href="#kelebihan" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Mudah dimengerti dan dipahami. Orang-orang bisa memahami model decision tree dengan penjelasan singkat.</li>
+<li>Memiliki nilai walaupun dengan sedikit data yang rumit. Wawasan  penting dapat dihasilkan berdasarkan para ahli yang menggambarkan  situasi dan preferensi mereka untuk hasil.</li>
+<li>Membantu menentukan nilai terburuk, terbaik, dan nilai yang diharapkan untuk berbagai skenario.</li>
+<li>Menggunakan model kotak putih jika hasil diberikan oleh model.</li>
+<li>Dapat dikombinasikan dengan teknik pengambilan keputusan lainnya.</li>
+</ul>
+<h5 id="kekurangan">KEKURANGAN<a class="headerlink" href="#kekurangan" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Tidak stabil, yang berarti bahwa  perubahan kecil dalam data dapat menyebabkan perubahan besar dalam  struktur decision tree optimal.</li>
+<li>Relatif tidak akurat. Banyak prediktor  lain memiliki kinerja yang lebih baik dengan data serupa. Hal ini dapat  diatasi dengan mengganti decision tree tunggal dengan forest of decision  tree acak. Namun hutan yang acak tidak semudah memahami decision tree  tunggal.</li>
+<li>Untuk data yang termasuk variabel  kategorikal dengan jumlah level yang berbeda, perolehan informasi dalam  decision tree cenderung mendukung atribut dengan level yang lebih  banyak.</li>
+<li>Perhitungan bisa menjadi sangat kompleks, terutama jika banyak nilai tidak pasti dan / atau jika banyak hasil dikaitkan.</li>
+</ul>
+<h5 id="implementasi">IMPLEMENTASI<a class="headerlink" href="#implementasi" title="Permanent link">&para;</a></h5>
+<h5 id="langkah-1-import-library-yang-di-butuhkan">Langkah 1: import library yang di butuhkan<a class="headerlink" href="#langkah-1-import-library-yang-di-butuhkan" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="language-python">import pandas as pd
+from sklearn.tree import DecisionTreeClassifier 
+from sklearn.model_selection import train_test_split 
+from sklearn import metrics
+from sklearn.metrics import accuracy_score
+import seaborn as sns
+from sklearn.tree import export_graphviz
+from sklearn.externals.six import StringIO
+from IPython.display import Image  
+from sklearn.tree import export_graphviz
+import pydotplus
+import numpy as np</code></pre>
+
+<h5 id="langkah-2-menginputkan-file">Langkah 2: menginputkan file<a class="headerlink" href="#langkah-2-menginputkan-file" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="language-python">data = pd.read_csv('mallcustomers.csv')
+data.head()</code></pre>
+
+<p><img alt="" src="../assets/images/4.PNG" /></p>
+<h5 id="langkah-ke-3">Langkah ke 3 :<a class="headerlink" href="#langkah-ke-3" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="language-python">data.info()</code></pre>
+
+<p><img alt="" src="../assets/images/5.PNG" /></p>
+<h5 id="sesuaikan-dengan-kolom-yang-ada">Sesuaikan dengan kolom yang ada<a class="headerlink" href="#sesuaikan-dengan-kolom-yang-ada" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="language-python">zero_not_accepted = ['CustomerID','Age','Annual Income','Spending Score 1-100']
+# for col in zero_not_accepted:
+#     for i in data[col]:
+#         if i==0:
+#             colSum = sum(data[col])
+#             meanCol=colSum/len(data[col])
+#             data[col]=meanCol
+
+for col in zero_not_accepted:
+    data[col]= data[col].replace(0,np.NaN)
+    mean = int(data[col].mean(skipna=True))
+    data[col] = data[col].replace(np.NaN,mean)</code></pre>
+
+<h5 id="x-menampilkan-kolom-yang-di-uji">x= menampilkan kolom yang di uji<a class="headerlink" href="#x-menampilkan-kolom-yang-di-uji" title="Permanent link">&para;</a></h5>
+<h5 id="y-mensmpilkan-class">y = mensmpilkan class<a class="headerlink" href="#y-mensmpilkan-class" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="language-python">X = data.iloc[:,0:3]
+y = data.iloc[:,3]
+#Pregnancies    Glucose BloodPressure   SkinThickness   Insulin BMI DiabetesPedigreeFunction    Age
+#build model &amp; train data
+X = data[['CustomerID','Age','Annual Income','Spending Score 1-100']]
+y = data['Gender']
+
+#split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state=0)</code></pre>
+
+<pre class="codehilite"><code class="language-python">clf = DecisionTreeClassifier(criterion="entropy", max_depth=4)
+clf = clf.fit(X_train,y_train)
+y_pred = clf.predict(X_test)</code></pre>
+
+<h5 id="menampilkan-grafik">Menampilkan Grafik<a class="headerlink" href="#menampilkan-grafik" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="language-python">feature_cols = ['CustomerID','Age','Annual Income','Spending Score 1-100']
+dot_data = StringIO()
+export_graphviz(clf, out_file=dot_data,  
+                filled=True, rounded=True,
+                special_characters=True,feature_names = feature_cols,class_names=['Male','Female'])
+graph = pydotplus.graph_from_dot_data(dot_data.getvalue())  
+graph.write_png('cust.png')
+Image(graph.create_png())</code></pre>
+
+<h5 id="hasil-output">Hasil Output<a class="headerlink" href="#hasil-output" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../assets/images/3.PNG" /></p>
+<ol>
+<li><a href="https://garudacyber.co.id/artikel/1545-pengertian-dan-penerapan-decision-tree">https://garudacyber.co.id/artikel/1545-pengertian-dan-penerapan-decision-tree</a></li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../indexknn/" title="Materi KNN" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Materi KNN
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2019 septian dwi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.instagram.com/septiandwi21__" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8c0d971c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
